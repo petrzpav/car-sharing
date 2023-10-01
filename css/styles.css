@@ -3,7 +3,7 @@
 :root {
     --highlight-color: #FF0000;
     --light-color: #fff;
-    --lighter-color: #B2B2B2;
+    --light2-color: #B2B2B2;
     --text-light-color: #6A6A6A;
     --dark-bg: #28272C;
 
@@ -19,7 +19,7 @@
     --main-nav-hover-bg: rgba(255, 255, 255, 0.2);
     --main-img-overlay-bg: rgba(0 ,0, 0, 0.3);
     --main-nav-item-padding: 33px 40px;
-    
+
     --primary-font-family: 'Nunito Sans', sans-serif;
     --secondary-font-family: 'Open Sans', sans-serif;
     --h1-font-size: 90px;
@@ -257,10 +257,16 @@ h3 {
 .service .col {
     text-align: center;
 }
-
 .service .col h3 {
     color: var(--light-color);
 }
 .service .col p {
-    color: var(--lighter-color)
+    color: var(--light2-color)
+}
+
+/********
+ * Contact
+ ********/
+.contact {
+    margin: 65px 0;
 }
