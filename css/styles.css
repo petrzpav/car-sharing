@@ -3,26 +3,39 @@
 :root {
     --highlight-color: #FF0000;
     --light-color: #fff;
+    --lighter-color: #B2B2B2;
+    --text-light-color: #6A6A6A;
+    --dark-bg: #28272C;
 
     --button-primary-bg: var(--highlight-color);
     --button-primary-color: var(--light-color);
     --button-secondary-bg: var(--light-color);
     --button-secondary-color: var(--highlight-color);
     --button-padding: 22px 55px;
+    --button-minimal-padding: 11px 29px;
     --button-ico-padding: 17px;
 
     --main-header-bg: rgba(0, 0, 0, 0.4);
     --main-nav-hover-bg: rgba(255, 255, 255, 0.2);
     --main-img-overlay-bg: rgba(0 ,0, 0, 0.3);
+    --main-nav-item-padding: 33px 40px;
     
     --primary-font-family: 'Nunito Sans', sans-serif;
     --secondary-font-family: 'Open Sans', sans-serif;
     --h1-font-size: 90px;
+    --h2-font-size: 35px;
+    --h3-font-size: 19px;
     --text-font-size: 16px;
     --logo-font-size: 35px;
 
+    --h2-sep-width: 50px;
+    --h2-sep-height: 3px;
+    --h2-sep-margin: 10px;
+
     --container-width: 1088px;
     --container-padding: 0 22px;
+
+    --col-gap: 16px;
 }
 
 /********
@@ -34,6 +47,34 @@
 body {
     font-family: var(--primary-font-family);
     font-size: var(--text-font-size);
+}
+h2 {
+    font-size: var(--h2-font-size);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
+    font-weight: bold;
+}
+h2::before,
+h2::after {
+    content: "";
+    display: inline-block;
+    background-color: var(--highlight-color);
+    width: var(--h2-sep-width);
+    height: var(--h2-sep-height);
+    box-shadow: 0px 1px 6px #FF00004D;
+    border-radius: 3px;
+}
+h2::before {
+    margin-right: var(--h2-sep-margin);
+}
+h2::after {
+    margin-left: var(--h2-sep-margin);
+}
+h3 {
+    font-size: var(--h3-font-size);
 }
 .container {
     width: var(--container-width);
@@ -52,6 +93,7 @@ body {
     cursor: pointer;
     text-transform: uppercase;
     font-weight: bold;
+    text-decoration: none;
 }
 .btn--primary {
     background-color: var(--button-primary-bg);
@@ -64,6 +106,37 @@ body {
 }
 .btn--ico {
     padding: var(--button-ico-padding);
+}
+.btn--minimal {
+    padding: var(--button-minimal-padding);
+}
+
+/********
+ * Row and col
+ ********/
+.row {
+    display: flex;
+    gap: var(--col-gap);
+}
+.col--3 {
+    width: calc(var(--container-width) / 3);
+}
+.col--4 {
+    width: calc(var(--container-width) / 4);
+}
+.col img {
+    max-width: 100%;
+}
+.col h3 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: var(--text-light-color);
+}
+.col p {
+    font-family: var(--secondary-font-family);
+    font-weight: 300;
+    margin-bottom: 15px;
+    color: var(--text-light-color);
 }
 
 /********
@@ -84,6 +157,7 @@ body {
 .logo img {
     margin-right: 10px;
 }
+
 /********
  * Main
  ********/
@@ -124,7 +198,7 @@ body {
 }
 .main__nav a {
     display: inline-block;
-    padding: 33px 40px;
+    padding: var(--main-nav-item-padding);
     text-decoration: none;
     color: var(--light-color);
     text-transform: uppercase;
@@ -161,4 +235,32 @@ body {
     margin: 0 auto;
     width: 55px;
     box-shadow: 0px 3px 6px #FF00004D;
+}
+
+/********
+ * Blog
+ ********/
+.blog {
+    padding-top: 95px;
+    padding-bottom: 100px;
+}
+
+/********
+ * Service
+ ********/
+.service {
+    background-color: var(--dark-bg);
+    color: var(--light-color);
+    padding-top: 60px;
+    padding-bottom: 110px;
+}
+.service .col {
+    text-align: center;
+}
+
+.service .col h3 {
+    color: var(--light-color);
+}
+.service .col p {
+    color: var(--lighter-color)
 }
