@@ -296,6 +296,7 @@ h3 {
 }
 .contact label {
     color: var(--light2-color);
+    cursor: pointer;
 }
 .contact input[type="checkbox"] {
     display: inline-block;
@@ -310,5 +311,8 @@ h3 {
     content: url('../images/Icon\ Check.svg');
     position: absolute;
     top: 2px;
-    left: 3px;
+    left: 4px;
+}
+.contact input[type="checkbox"]:checked + p {
+    color: black;
 }
