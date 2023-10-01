@@ -36,6 +36,8 @@
     --container-padding: 0 22px;
 
     --col-gap: 16px;
+
+    --input-padding: 8px 12px;
 }
 
 /********
@@ -110,6 +112,9 @@ h3 {
 .btn--minimal {
     padding: var(--button-minimal-padding);
 }
+.btn--outline {
+    border: thin solid var(--highlight-color);
+}
 
 /********
  * Row and col
@@ -117,6 +122,9 @@ h3 {
 .row {
     display: flex;
     gap: var(--col-gap);
+}
+.col--2 {
+    width: calc(var(--container-width) / 2);
 }
 .col--3 {
     width: calc(var(--container-width) / 3);
@@ -269,4 +277,38 @@ h3 {
  ********/
 .contact {
     margin: 65px 0;
+}
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: var(--input-padding);
+    border: 1px solid #D1D1D1;
+    border-radius: 8px;
+}
+.contact input::placeholder,
+.contact textarea::placeholder {
+    color: var(--light2-color);
+}
+.contact label {
+    color: var(--light2-color);
+}
+.contact input[type="checkbox"] {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    appearance: none;
+    position: relative;
+    padding: 0;
+    flex-shrink: 0;
+}
+.contact input[type="checkbox"]:checked::after {
+    content: url('../images/Icon\ Check.svg');
+    position: absolute;
+    top: 2px;
+    left: 3px;
 }
